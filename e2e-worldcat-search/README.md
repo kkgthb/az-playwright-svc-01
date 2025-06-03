@@ -1,0 +1,3 @@
+```powershell
+npm run test
+```
