@@ -1,3 +1,0 @@
-```powershell
-npm run test
-```

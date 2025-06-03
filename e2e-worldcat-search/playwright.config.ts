@@ -13,4 +13,9 @@ export default defineConfig({
             use: { ...devices['Desktop Firefox'] },
         },
     ],
+    use: {
+        trace: 'on-first-retry',
+        video: 'retain-on-failure',
+        screenshot: 'on'
+    }
 });
