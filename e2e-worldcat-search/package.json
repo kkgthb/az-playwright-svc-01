@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "test": "npx playwright test -c playwright.service.config.ts --workers=1",
+        "test": "npx playwright test -c playwright.service.config.ts --workers=2",
         "test-local": "npx playwright test"
     },
     "devDependencies": {
