@@ -6,7 +6,7 @@ npm run test
 
 [Playwright tests source code for Worldcat](/e2e-worldcat-search/src/my-e2e-tests/my-first-tests.spec.ts)
 
-![](README-screenshot.png)
+![Screenshot of test results displayed in Microsoft Playwright "reporting" service](README-screenshot.png)
 
 Same test, different test engines:
 
