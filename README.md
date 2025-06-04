@@ -49,7 +49,7 @@ npm run test
 
         });
         ```
-* For contrast, here is the equivalent GUI configurator in BrowserStack _(honestly, I prefer the code version myself, especially since I can easily keep it right in the same Git version-controlled codebase as my website's source code, since I can pull in secrets and variables for test variants from Azure App Configuration or Azure Key Vault or a database instead of having to data-load them all into, and trust, BrowserStack's secrets store, etc.)_:
+* For contrast, here is the equivalent GUI configurator in BrowserStack _(honestly, I prefer the code version myself, especially since I can easily keep it right in the same Git version-controlled codebase as my website's source code, since I can pull in secrets and variables for test variants from Azure App Configuration or Azure Key Vault or a database instead of having to data-load them all into, and trust, BrowserStack's secrets store, since I don't need to deal with a dedicated standalone desktop application (although I do need to have Node.js installed onto my computer and needed a VSCode plugin as a recorder), etc.)_:
     * ![Screenshot of setting up a test in Browserstack's desktop application](/README-browserstack-define-screenshot.png)
 
 ---
