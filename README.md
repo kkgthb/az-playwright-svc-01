@@ -4,10 +4,35 @@
 
 ## Execution instructions
 
+### On Azure, if you have it set up
+
 ```powershell
+# Get into the right folder
 cd e2e-worldcat-search
+
+# Install the Node.js packages from this codebase onto your computer
 npm install
+
+# Run Playwright on Azure
 npm run test
+
+# Viewing results:  see your CLI output for the Azure link
+```
+
+### On your local computer
+
+```powershell
+# Get into the right folder
+cd e2e-worldcat-search
+
+# Install the Node.js packages from this codebase onto your computer
+npm install
+
+# Run Playwright on your own computer
+npm run test-local
+
+# Viewing results:  here is an example of opening the "trace"
+npx playwright show-trace .\.test-results\my-first-tests.e2e.playwright.ts-Worldcat-search-works-chromium\trace.zip
 ```
 
 ---
@@ -63,6 +88,8 @@ npm run test
 Here is a portion of Microsoft's UI.  Not bad!  Screenshots, videos, a browser Network tab looking thing accompanied by screenshots and videos with little red dots on the screenshots indicating click actions, etc.
 
 ![Screenshot of test results displayed in Microsoft Playwright "reporting" service](/README-screenshot.png)
+
+_(Note:  Playwright, out of the box, also includes all of that when run locally on your machine.  See execution instructions up top.)_
 
 ---
 
