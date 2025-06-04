@@ -13,6 +13,12 @@ export default defineConfig({
             name: 'firefox',
             use: { ...devices['Desktop Firefox'] },
         },
+        {
+            name: 'Mobile Safari',
+            use: {
+                ...devices['iPhone 13'],
+            },
+        },
     ],
     use: {
         trace: 'on',
