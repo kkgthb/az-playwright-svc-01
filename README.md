@@ -91,6 +91,8 @@ Here is a portion of Microsoft's UI.  Not bad!  Screenshots, videos, a browser N
 
 _(Note:  Playwright, out of the box, also includes all of that when run locally on your machine.  See execution instructions up top.)_
 
+![Screenshot of test result "trace" displayed in plain-old Node.js on my local desktop after a local test run](/README-desktop-trace-screenshot.png)
+
 ---
 
 ## Same test, different test engines:
