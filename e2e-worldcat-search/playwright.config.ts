@@ -2,6 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
     testDir: "./src/my-e2e-tests",
+    testMatch: "**/*.@(spec|test|e2e)?(.playwright).?(c|m)[jt]s?(x)",
     fullyParallel: true,
     projects: [
         {
@@ -15,7 +16,7 @@ export default defineConfig({
     ],
     use: {
         trace: 'on-first-retry',
-        video: 'on',
+        video: 'retain-on-failure',
         screenshot: 'on'
     }
 });
