@@ -14,7 +14,7 @@ npm run test
 
 ## Source code
 
-* Here is a stripped-down version of what it looks like to have to author this test by hand in Playwright _(not so bad!)_:
+* Here is a stripped-down version of what it looks like to have to author this test by hand in Playwright _(not so bad -- especially since I let [the VSCode plugin](https://playwright.dev/docs/codegen) do all of the hard work of recording my actions in the browser for starters, and then just cleaned it up to match my stylistic preferences!)_:
     * _([Full code here](/e2e-worldcat-search/src/my-e2e-tests/my-first-tests.e2e.playwright.ts))_; snippet below:
         ```typescript
         import { test, expect, type Page } from "@playwright/test";
@@ -49,7 +49,7 @@ npm run test
 
         });
         ```
-* For contrast, here is the equivalent GUI configurator in BrowserStack _(honestly, I prefer the code version myself, especially since I can easily keep it right in the same Git version-controlled codebase as my website's source code)_:
+* For contrast, here is the equivalent GUI configurator in BrowserStack _(honestly, I prefer the code version myself, especially since I can easily keep it right in the same Git version-controlled codebase as my website's source code, since I can pull in secrets and variables for test variants from Azure App Configuration or Azure Key Vault or a database instead of having to data-load them all into, and trust, BrowserStack's secrets store, etc.)_:
     * ![Screenshot of setting up a test in Browserstack's desktop application](/README-browserstack-define-screenshot.png)
 
 ---
