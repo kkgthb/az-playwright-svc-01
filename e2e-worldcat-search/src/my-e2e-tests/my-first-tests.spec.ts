@@ -1,40 +1,30 @@
 import { test, expect, type Page } from "@playwright/test";
 const url_to_visit = `https://search.worldcat.org/search?q=Katie&itemSubType=book-printbook&limit=10&offset=21&itemSubTypeModified=book-printbook`;
 
-test.describe.configure({ mode: 'serial' });
-let page: Page;
-
-test.describe('Worldcat search works', () => {
-
-    test.beforeAll(async ({ browser }) => {
-        page = await browser.newPage();
-    })
-
-    test('Load the page, reject cookies, and validate the site title', async () => {
+test('Worldcat search works', async ({ page }, testInfo) => {
+    await test.step('Open search results, filtered and on results page 3', async () => {
         await page.goto(url_to_visit);
+    });
+    await test.step('Reject cookies', async () => {
+        await page.getByLabel(/^Cookie banner$/).screenshot({ path: testInfo.outputPath('cookie-banner.png') }); // Just for fun
         await page.getByRole('button', { name: 'Reject unnecessary cookies' }).click();
+    });
+    await test.step('Validate the site title', async () => {
         await expect(page).toHaveTitle(/^Katie - Search Results$/);
     });
-
-    test('Validate that we are on page 3', async () => {
+    await test.step('Validate that we are on page 3', async () => {
         await expect(page.getByLabel(/^page 3$/)).toHaveText(`3`);
     })
-
-    test('Validate that there are 10 search results (because we paginated at 10 and searched a common word)', async () => {
+    await test.step('Validate that there are 10 search results (because we paginated at 10 and searched a common word)', async () => {
         await expect(page.getByTestId(/^search-result-item-/)).toHaveCount(10);
     })
-
-    test('Clear filter and validate that we are on page 1', async () => {
+    await test.step('Clear filter', async () => {
         await page.getByTestId('facet-container-format-reset-button').click();
+    })
+    await test.step('Validate that we are on page 1', async () => {
         await expect(page.getByLabel(/^page 1$/)).toHaveText(`1`);
     })
-
-    test('Validate that there are also 10 search results now', async () => {
+    await test.step('Validate that there are also 10 search results now', async () => {
         await expect(page.getByTestId(/^search-result-item-/)).toHaveCount(10);
     })
-
-    test.afterAll(async () => {
-        await page.close();
-    });
-
 });
