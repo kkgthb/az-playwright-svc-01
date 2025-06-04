@@ -26,7 +26,15 @@ test('Worldcat search works', async ({ page }, testInfo) => {
 
     // Action
     await test.step('Clear filter', async () => {
+        const small_screen_show_filters_button = await page.getByTestId('show-filters-button');
+        if (await small_screen_show_filters_button.isVisible()) {
+            await small_screen_show_filters_button.click();
+        }
         await page.getByTestId('facet-container-format-reset-button').click();
+        const small_screen_hide_filters_button = await page.getByTestId('header-back-button');
+        if (await small_screen_hide_filters_button.isVisible()) {
+            await small_screen_hide_filters_button.click();
+        }
     })
 
     // Validation
