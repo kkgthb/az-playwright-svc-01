@@ -25,6 +25,7 @@ export default defineConfig({
         // // https://www.browserstack.com/docs/automate/playwright/playwright-ios#Using_legacy
         // // Allegedly, this stuff should work as an alternative to Microsoft Playwright Testing Service, 
         // // but the docs don't match the official example, so keeping commented out for now.
+        // // https://github.com/glkada/BrowserStack-PlayWrightTest/blob/cafaed7b604e6473f5a8477a445066f4fbda018a/playwright.config.js#L55
         // {
         //     name: 'chrome@Samsung Galaxy S22:13@browserstack-mobile',
         //     use: {
