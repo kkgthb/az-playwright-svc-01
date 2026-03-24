@@ -1,7 +1,7 @@
 {
     "scripts": {
         "test": "npx playwright test -c playwright.service.azure.config.ts --workers=20",
-        "test-local": "npx playwright test"
+        "test-local": "npx playwright test -c playwright.local.config.ts --workers=20"
     },
     "devDependencies": {
         "@azure/microsoft-playwright-testing": "^1.0.0-beta.6",
